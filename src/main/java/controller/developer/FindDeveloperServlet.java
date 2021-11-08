@@ -17,7 +17,7 @@ public class FindDeveloperServlet extends HttpServlet {
     BaseService<Developer, Long> service = ServiceFactory.of(Developer.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/developer/find-developer-by-name.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/developer/find-developer-by-name.jsp").forward(req,resp);
     }
 
     @Override
@@ -25,10 +25,10 @@ public class FindDeveloperServlet extends HttpServlet {
         String name = req.getParameter("name");
         List<Developer> developer = service.findByName(name);
         if(developer.isEmpty())
-            getServletContext().getRequestDispatcher("/not-found.jsp").forward(req,resp);
+            getServletContext().getRequestDispatcher("/view/not-found.jsp").forward(req,resp);
         else {
             req.setAttribute("companies", developer);
-            getServletContext().getRequestDispatcher("/developer/show-developers.jsp").forward(req, resp);
+            getServletContext().getRequestDispatcher("/view/developer/show-developers.jsp").forward(req, resp);
         }
     }
 }

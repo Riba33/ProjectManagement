@@ -12,6 +12,16 @@ public class CrudServiceImpl<T extends BaseEntity<ID>, ID> implements BaseServic
 
     CrudRepository crudRepository;
 
+    @Override
+    public void create(T t) {
+        crudRepository.create(t);
+    }
+
+    @Override
+    public T update(T t) {
+        return (T) crudRepository.update(t);
+    }
+
     @SneakyThrows
     public CrudServiceImpl(Class<T> modelClass){
         this.crudRepository = RepositoryFactory.of(modelClass);

@@ -22,7 +22,7 @@ public class CreateProjectServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/project/create-project.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/project/create-project.jsp").forward(req,resp);
     }
 
     @SneakyThrows
@@ -35,11 +35,8 @@ public class CreateProjectServlet extends HttpServlet {
                 .name(name)
                 .date(date)
                 .build();
-        try {
-            service.save(project);
-        }
-        catch (NoSuchElementException e) {
-            getServletContext().getRequestDispatcher("/create-ok.jsp").forward(req, resp);
-        }
+        service.save(project);
+        getServletContext().getRequestDispatcher("/view/create-ok.jsp").forward(req, resp);
+
     }
 }

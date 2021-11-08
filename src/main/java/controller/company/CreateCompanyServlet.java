@@ -16,7 +16,7 @@ public class CreateCompanyServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/company/create-company.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/company/create-company.jsp").forward(req,resp);
     }
 
     @Override
@@ -28,11 +28,8 @@ public class CreateCompanyServlet extends HttpServlet {
                         .name(name)
                         .safer(safer)
                         .build();
-        try {
-            service.save(company);
-        }
-        catch (NoSuchElementException e) {
-            getServletContext().getRequestDispatcher("/create-ok.jsp").forward(req, resp);
-        }
+
+            service.create(company);
+            getServletContext().getRequestDispatcher("/view/create-ok.jsp").forward(req, resp);
     }
 }

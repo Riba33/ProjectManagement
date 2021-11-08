@@ -20,6 +20,6 @@ public class ShowCompanyServlet extends HttpServlet {
 
         List<Company> all = service.findALL();
         req.setAttribute("companies",all);
-        getServletContext().getRequestDispatcher("/company/show-companies.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/company/show-companies.jsp").forward(req,resp);
     }
 }

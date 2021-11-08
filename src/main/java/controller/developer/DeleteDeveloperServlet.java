@@ -23,6 +23,6 @@ public class DeleteDeveloperServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     Long id = Long.valueOf(req.getParameter("id"));
     service.deleteById(id);
-        getServletContext().getRequestDispatcher("/delete-ok.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/delete-ok.jsp").forward(req,resp);
     }
 }

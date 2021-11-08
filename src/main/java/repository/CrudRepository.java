@@ -13,9 +13,9 @@ public interface CrudRepository<E extends BaseEntity<ID>,ID> {
 
     List<E> findByName(String name);
 
-    // E create (E e);
+    void create (E e);
 
-    // E update (E e);
+    E update (E e);
 
     void deleteById(ID id);
 

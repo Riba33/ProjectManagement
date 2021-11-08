@@ -20,6 +20,6 @@ public class ShowSkillsServlet extends HttpServlet {
 
         List<Skill> all = service.findALL();
         req.setAttribute("skills",all);
-        getServletContext().getRequestDispatcher("/skill/show-skills.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/skill/show-skills.jsp").forward(req,resp);
     }
 }

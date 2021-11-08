@@ -18,7 +18,7 @@ public class CreateDeveloperServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/developer/create-developer.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/developer/create-developer.jsp").forward(req,resp);
     }
 
     @Override
@@ -36,11 +36,7 @@ public class CreateDeveloperServlet extends HttpServlet {
                 .gender(gender)
                 .salary(Integer.valueOf(salary))
                 .build();
-        try {
             service.save(developer);
-        }
-        catch (NoSuchElementException e) {
-            getServletContext().getRequestDispatcher("/create-ok.jsp").forward(req, resp);
-        }
+            getServletContext().getRequestDispatcher("/view/create-ok.jsp").forward(req, resp);
     }
 }

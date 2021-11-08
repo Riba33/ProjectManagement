@@ -17,7 +17,7 @@ public class UpdateDeveloperServlet extends HttpServlet {
     BaseService<Developer, Long> service = ServiceFactory.of(Developer.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/developer/update-developer.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/developer/update-developer.jsp").forward(req,resp);
     }
 
     @Override
@@ -38,6 +38,6 @@ public class UpdateDeveloperServlet extends HttpServlet {
                 .salary(Integer.parseInt(salary))
                 .build();
         service.save(developer);
-        getServletContext().getRequestDispatcher("/update-ok.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/update-ok.jsp").forward(req,resp);
     }
 }

@@ -15,18 +15,14 @@ public class FindCompanyServlet extends HttpServlet {
     BaseService<Company, Long> service = ServiceFactory.of(Company.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/company/find-company-by-name.jsp").forward(req,resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        getServletContext().getRequestDispatcher("/view/company/find-company-by-name.jsp").forward(req,resp);
         String name = req.getParameter("name");
         List<Company> companies = service.findByName(name);
         if(companies.isEmpty())
-            getServletContext().getRequestDispatcher("/not-found.jsp").forward(req,resp);
+            getServletContext().getRequestDispatcher("/view/not-found.jsp").forward(req,resp);
         else {
             req.setAttribute("companies", companies);
-            getServletContext().getRequestDispatcher("/company/show-companies.jsp").forward(req, resp);
+            getServletContext().getRequestDispatcher("/view/company/show-companies.jsp").forward(req, resp);
         }
     }
 }

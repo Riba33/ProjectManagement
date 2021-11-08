@@ -16,7 +16,7 @@ public class UpdateSkillServlet extends HttpServlet {
     BaseService<Skill, Long> service = ServiceFactory.of(Skill.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/skill/update-skill.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/skill/update-skill.jsp").forward(req,resp);
     }
 
     @Override
@@ -31,6 +31,6 @@ public class UpdateSkillServlet extends HttpServlet {
                 .level(level)
                 .build();
                 service.save(skill);
-        getServletContext().getRequestDispatcher("/update-ok.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/update-ok.jsp").forward(req,resp);
     }
 }

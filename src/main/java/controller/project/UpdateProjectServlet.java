@@ -19,7 +19,7 @@ public class UpdateProjectServlet extends HttpServlet {
     BaseService<Project, Long> service = ServiceFactory.of(Project.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/project/update-project.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/project/update-project.jsp").forward(req,resp);
     }
 
     @SneakyThrows
@@ -35,6 +35,6 @@ public class UpdateProjectServlet extends HttpServlet {
                         .date(date)
                         .build();
         service.save(project);
-        getServletContext().getRequestDispatcher("/update-ok.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/update-ok.jsp").forward(req,resp);
     }
 }

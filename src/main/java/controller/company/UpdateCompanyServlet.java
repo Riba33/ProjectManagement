@@ -14,7 +14,7 @@ public class UpdateCompanyServlet extends HttpServlet {
     BaseService<Company, Long> service = ServiceFactory.of(Company.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/company/update-company.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/company/update-company.jsp").forward(req,resp);
     }
 
     @Override
@@ -28,6 +28,6 @@ public class UpdateCompanyServlet extends HttpServlet {
         company.setName(name);
         company.setSafer(safer);
         service.save(company);
-        getServletContext().getRequestDispatcher("/update-ok.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/update-ok.jsp").forward(req,resp);
     }
 }

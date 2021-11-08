@@ -17,7 +17,7 @@ public class FindCustomerServlet extends HttpServlet {
     BaseService<Customer, Long> service = ServiceFactory.of(Customer.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/customer/find-customer-by-name.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/customer/find-customer-by-name.jsp").forward(req,resp);
     }
 
     @Override
@@ -25,10 +25,10 @@ public class FindCustomerServlet extends HttpServlet {
         String name = req.getParameter("name");
         List<Customer> customer = service.findByName(name);
         if(customer.isEmpty())
-            getServletContext().getRequestDispatcher("/not-found.jsp").forward(req,resp);
+            getServletContext().getRequestDispatcher("/view/not-found.jsp").forward(req,resp);
         else {
             req.setAttribute("customer", customer);
-            getServletContext().getRequestDispatcher("/customer/show-customer.jsp").forward(req, resp);
+            getServletContext().getRequestDispatcher("/view/customer/show-customer.jsp").forward(req, resp);
         }
     }
 }

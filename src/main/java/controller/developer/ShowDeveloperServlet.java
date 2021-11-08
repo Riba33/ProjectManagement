@@ -20,6 +20,6 @@ public class ShowDeveloperServlet extends HttpServlet {
 
         List<Developer> all = service.findALL();
         req.setAttribute("developers",all);
-        getServletContext().getRequestDispatcher("/developer/show-developers.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/developer/show-developers.jsp").forward(req,resp);
     }
 }

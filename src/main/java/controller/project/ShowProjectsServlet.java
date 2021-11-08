@@ -20,6 +20,6 @@ public class ShowProjectsServlet extends HttpServlet {
 
         List<Project> all = service.findALL();
         req.setAttribute("projects",all);
-        getServletContext().getRequestDispatcher("/project/show-projects.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/project/show-projects.jsp").forward(req,resp);
     }
 }

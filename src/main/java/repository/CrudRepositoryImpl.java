@@ -127,15 +127,22 @@ class CrudRepositoryImpl<T extends BaseEntity<ID>, ID> implements Closeable, Cru
         }
     }
 
-//    private T create(T t) {
-//        return executeStatement(createPreparedStatement, t);
-//    }
-//
-//    @SneakyThrows
-//    private T update(T t) {
-//        updatePreparedStatement.setObject(columnFieldName.size() + 1, t.getId());
-//        return executeStatement(updatePreparedStatement, t);
-//    }
+    @SneakyThrows
+    public void create(T t) {
+        int count = 1;
+        for (String fieldName : columnFieldName.values()) {
+            Field declaredField = modelClass.getDeclaredField(fieldName);
+            declaredField.setAccessible(true);
+            createPreparedStatement.setObject(count++, declaredField.get(t));
+        }
+        createPreparedStatement.executeUpdate();
+    }
+
+    @SneakyThrows
+    public T update(T t) {
+        updatePreparedStatement.setObject(columnFieldName.size() + 1, t.getId());
+        return executeStatement(updatePreparedStatement, t);
+    }
 
     @SneakyThrows
     private T executeStatement(PreparedStatement statement, T t) {

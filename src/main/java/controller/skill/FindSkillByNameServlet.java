@@ -17,7 +17,7 @@ public class FindSkillByNameServlet extends HttpServlet {
     BaseService<Skill, Long> service = ServiceFactory.of(Skill.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/skill/find-skills-by-name.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/skill/find-skills-by-name.jsp").forward(req,resp);
     }
 
     @Override
@@ -25,10 +25,10 @@ public class FindSkillByNameServlet extends HttpServlet {
         String name = req.getParameter("name");
         List<Skill> skills = service.findByName(name);
         if(skills.isEmpty())
-            getServletContext().getRequestDispatcher("/not-found.jsp").forward(req,resp);
+            getServletContext().getRequestDispatcher("/view/not-found.jsp").forward(req,resp);
         else {
             req.setAttribute("skills", skills);
-            getServletContext().getRequestDispatcher("/skill/show-skills.jsp").forward(req, resp);
+            getServletContext().getRequestDispatcher("/view/skill/show-skills.jsp").forward(req, resp);
         }
     }
 }

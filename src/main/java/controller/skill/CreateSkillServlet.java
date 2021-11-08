@@ -18,7 +18,7 @@ public class CreateSkillServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/skill/create-skill.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/skill/create-skill.jsp").forward(req,resp);
     }
 
     @Override
@@ -30,11 +30,7 @@ public class CreateSkillServlet extends HttpServlet {
                 .name(name)
                 .level(level)
                 .build();
-        try {
-            service.save(skill);
-        }
-        catch (NoSuchElementException e) {
-            getServletContext().getRequestDispatcher("/create-ok.jsp").forward(req, resp);
-        }
+       service.save(skill);
+       getServletContext().getRequestDispatcher("/view/create-ok.jsp").forward(req, resp);
     }
 }

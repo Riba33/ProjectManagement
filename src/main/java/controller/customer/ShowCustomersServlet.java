@@ -18,6 +18,6 @@ public class ShowCustomersServlet extends HttpServlet {
 
         List<Customer> all = service.findALL();
         req.setAttribute("customers",all);
-        getServletContext().getRequestDispatcher("/customer/show-customers.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/customer/show-customers.jsp").forward(req,resp);
     }
 }
