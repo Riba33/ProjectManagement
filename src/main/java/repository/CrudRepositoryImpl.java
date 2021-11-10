@@ -33,6 +33,7 @@ class CrudRepositoryImpl<T extends BaseEntity<ID>, ID> implements Closeable, Cru
     private final PreparedStatement findAllPreparedStatement;
     private final PreparedStatement findByIDPreparedStatement;
     private final PreparedStatement findByNamePreparedStatement;
+    private final PreparedStatement findByUserNamePreparedStatement;
     private final PreparedStatement deletePreparedStatement;
     private final PreparedStatement createPreparedStatement;
     private final PreparedStatement updatePreparedStatement;
@@ -68,6 +69,8 @@ class CrudRepositoryImpl<T extends BaseEntity<ID>, ID> implements Closeable, Cru
                 tableName + " WHERE id=?", generatedColumns);
         this.findByNamePreparedStatement = connection.prepareStatement("SELECT * FROM " + databaseSchemaName + "." +
                 tableName + " WHERE name=?", generatedColumns);
+        this.findByUserNamePreparedStatement = connection.prepareStatement("SELECT * FROM " + databaseSchemaName + "." +
+                tableName + " WHERE username=?", generatedColumns);
         this.deletePreparedStatement = connection.prepareStatement("DELETE FROM " + databaseSchemaName + "." +
                 tableName + " WHERE id=?;", generatedColumns);
         this.createPreparedStatement = connection.prepareStatement("INSERT INTO " + databaseSchemaName + "." +
@@ -91,6 +94,16 @@ class CrudRepositoryImpl<T extends BaseEntity<ID>, ID> implements Closeable, Cru
     public List<T> findByName(String name){
         findByNamePreparedStatement.setObject(1,name);
         return parse(findByNamePreparedStatement.executeQuery());
+    }
+
+    @SneakyThrows
+    @Override
+    public Optional<T> findByUsername(String username) {
+        findByUserNamePreparedStatement.setObject(1, username);
+        final List<T> result = parse(findByUserNamePreparedStatement.executeQuery());
+        if (result.isEmpty()) return null;
+        if (result.size() > 1) throw new RuntimeException("Method 'find by id' returned more than one result");
+        return Optional.of(result.get(0));
     }
 
     @SneakyThrows

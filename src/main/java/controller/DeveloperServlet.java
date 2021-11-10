@@ -22,7 +22,7 @@ public class DeveloperServlet extends HttpServlet {
                 req.setAttribute("developers",all);
                 getServletContext().getRequestDispatcher("/view/developer/show-developers.jsp").forward(req,resp);
                 break;
-            case "find-developer":
+            case "find-developers-by-name":
                 String name = req.getParameter("name");
                 List<Developer> developers = service.findByName(name);
                 if(developers.isEmpty()) {
@@ -34,6 +34,19 @@ public class DeveloperServlet extends HttpServlet {
                     getServletContext().getRequestDispatcher("/view/developer/show-developers.jsp").forward(req, resp);
                 }
                 break;
+
+            case "find-developer-by-username":
+                String username = req.getParameter("username");
+                Developer developer = service.findByUsername(username).get();
+                if(developer.equals(null)) {
+                req.setAttribute("message","Developer not found!");
+                getServletContext().getRequestDispatcher("/view/message.jsp").forward(req, resp);
+            }
+                else {
+                req.setAttribute("developer", developer);
+                getServletContext().getRequestDispatcher("/view/developer/show-developer.jsp").forward(req, resp);
+            }
+            break;
             case "update-developer":
                 doPut(req,resp);
                 break;

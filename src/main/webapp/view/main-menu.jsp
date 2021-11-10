@@ -76,7 +76,7 @@
         </button>
         <div class="dropdown-content">
             <a href="/my-app/company/show-companies">Show Companies</a>
-            <a href="/my-app/view/company/find-company-by-name.jsp">Find Company</a>
+            <a href="/my-app/view/company/find-companies-by-name.jsp">Find Companies By Name</a>
             <a href="/my-app/view/company/create-company.jsp">Create Company</a>
         </div>
     </div>
@@ -86,7 +86,7 @@
         </button>
         <div class="dropdown-content">
             <a href="/my-app/customer/show-customers">Show Customers</a>
-            <a href="/my-app/view/customer/find-customer-by-name.jsp">Find Customer</a>
+            <a href="/my-app/view/customer/find-customers-by-name.jsp">Find Customers By Name</a>
             <a href="/my-app/view/customer/create-customer.jsp">Create Customer</a>
         </div>
     </div>
@@ -96,7 +96,8 @@
         </button>
         <div class="dropdown-content">
             <a href="/my-app/developer/show-developer">Show Developers</a>
-            <a href="/my-app/view/developer/find-developer-by-name.jsp">Find Developer</a>
+            <a href="/my-app/view/developer/find-developers-by-name.jsp">Find Developers By Name</a>
+            <a href="/my-app/view/developer/find-developer-by-username.jsp">Find Developer By UserName</a>
             <a href="/my-app/view/developer/create-developer.jsp">Create Developer</a>
         </div>
     </div>
@@ -106,7 +107,7 @@
         </button>
         <div class="dropdown-content">
             <a href="/my-app/project/show-project">Show Project</a>
-            <a href="/my-app/view/project/find-project-by-name.jsp">Find Project</a>
+            <a href="/my-app/view/project/find-projects-by-name.jsp">Find Projects By Name</a>
             <a href="/my-app/view/project/create-project.jsp">Create Project</a>
         </div>
     </div>
@@ -116,7 +117,7 @@
         </button>
         <div class="dropdown-content">
             <a href="/my-app/skill/show-skill">Show Skills</a>
-            <a href="/my-app/view/skill/find-skills-by-name.jsp">Find Skill By Name</a>
+            <a href="/my-app/view/skill/find-skills-by-name.jsp">Find Skills By Name</a>
             <a href="/my-app/view/skill/find-skill-by-id.jsp">Find Skill By ID</a>
             <a href="/my-app/view/skill/create-skill.jsp">Create Skill</a>
         </div>

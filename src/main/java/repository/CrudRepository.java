@@ -13,6 +13,8 @@ public interface CrudRepository<E extends BaseEntity<ID>,ID> {
 
     List<E> findByName(String name);
 
+    Optional<E> findByUsername(String username);
+
     void create (E e);
 
     E update (E e);

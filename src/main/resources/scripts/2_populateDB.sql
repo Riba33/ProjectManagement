@@ -11,11 +11,11 @@ INSERT INTO skils VALUES ('10', 'JS', 'Middle');
 INSERT INTO skils VALUES ('11', 'C#', 'Senior');
 INSERT INTO skils VALUES ('12', 'JS', 'Senior');
 
-INSERT INTO developers VALUES ('1', 'Vitaliy', 'Tkachuk', '36', 'M', '500');
-INSERT INTO developers VALUES ('2', 'Oleksiy', 'Krutko', '42', 'M', '550');
-INSERT INTO developers VALUES ('3', 'Alex', 'Dorosh', '32', 'M', '600');
-INSERT INTO developers VALUES ('4', 'Vova', 'Lysenko', '28', 'M', '800');
-INSERT INTO developers VALUES ('5', 'Olga', 'Kurylenko', '33', 'W', '900');
+INSERT INTO developers VALUES ('1', 'Riba', 'Vitaliy', 'Tkachuk', '36', 'M', '500');
+INSERT INTO developers VALUES ('2', 'Leha', 'Oleksiy', 'Krutko', '42', 'M', '550');
+INSERT INTO developers VALUES ('3', 'Cool', 'Alex', 'Dorosh', '32', 'M', '600');
+INSERT INTO developers VALUES ('4', 'Vovan','Vova', 'Lysenko', '28', 'M', '800');
+INSERT INTO developers VALUES ('5', 'Star','Olga', 'Kurylenko', '33', 'W', '900');
 
 INSERT INTO companies VALUES ('1', 'SoftServe', 'Software');
 INSERT INTO companies VALUES ('2', 'GoIt', 'Software');

@@ -24,7 +24,7 @@ public class CustomerServlet extends HttpServlet {
                 req.setAttribute("customers",all);
                 getServletContext().getRequestDispatcher("/view/customer/show-customers.jsp").forward(req,resp);
                 break;
-            case "find-customer":
+            case "find-customers-by-name":
                 String name = req.getParameter("name");
                 List<Customer> customer = service.findByName(name);
                 if(customer.isEmpty()) {

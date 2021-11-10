@@ -46,7 +46,7 @@ public class CompanyServlet extends HttpServlet {
                 req.setAttribute("companies",all);
                 getServletContext().getRequestDispatcher("/view/company/show-companies.jsp").forward(req,resp);
                 break;
-            case "find-company":
+            case "find-companies-by-name":
                 String name = req.getParameter("name");
                 List<Company> companies = service.findByName(name);
                 if(companies.isEmpty()) {

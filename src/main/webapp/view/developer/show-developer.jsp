@@ -32,7 +32,7 @@
         <th>Update</th>
         <th>Delete</th>
     </tr>
-    <c:forEach var="dev" items="${requestScope.developers}">
+    <c:set var="dev" value="${requestScope.developer}"/>
         <tr>
             <td>${dev.id}</td>
             <td>${dev.username}</td>
@@ -45,7 +45,6 @@
                         &surname=${dev.surname}&age=${dev.age}&gender=${dev.gender}&salary=${dev.salary}">Update</a></td>
             <td><a href="/my-app/developer/delete-developer?id=${dev.id}">Delete</a></td>
         </tr>
-    </c:forEach>
 </table>
 </body>
 </html>

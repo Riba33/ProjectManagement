@@ -13,6 +13,8 @@ public interface BaseService<E extends BaseEntity<ID>,ID>{
 
     Optional<E> findById(ID id);
 
+    Optional<E> findByUsername(String username);
+
     List<E> findALL();
 
     List<E> findByName(String name);

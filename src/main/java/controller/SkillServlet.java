@@ -40,7 +40,7 @@ public class SkillServlet extends HttpServlet {
                 }
                 break;
 
-            case "find-skill-by-name":
+            case "find-skills-by-name":
                 String name = req.getParameter("name");
                 List<Skill> skills = service.findByName(name);
                 if(skills.isEmpty()) {

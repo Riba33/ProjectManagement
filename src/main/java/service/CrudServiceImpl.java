@@ -52,6 +52,10 @@ public class CrudServiceImpl<T extends BaseEntity<ID>, ID> implements BaseServic
         return crudRepository.findById(id);
     }
 
+    @Override
+    public Optional<T> findByUsername(String username) {
+        return crudRepository.findByUsername(username);
+    }
 
 
 }

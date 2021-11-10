@@ -25,7 +25,7 @@ public class ProjectServlet extends HttpServlet {
                 req.setAttribute("projects",all);
                 getServletContext().getRequestDispatcher("/view/project/show-projects.jsp").forward(req,resp);
                 break;
-            case "find-project":
+            case "find-projects-by-name":
                 String name = req.getParameter("name");
                 List<Project> projects = service.findByName(name);
                 if(projects.isEmpty()) {

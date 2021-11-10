@@ -20,6 +20,7 @@
 <br>
 <form method="get" action="/my-app/developer/update-developer">
     <label>ID<input type="text" readonly name="id" value="<%= request.getParameter("id")%>"></label><br>
+    <label>Username<input type="text" name="username" value="<%= request.getParameter("username")%>" required></label><br>
     <label>Name<input type="text" name="name" value="<%= request.getParameter("name")%>" required></label><br>
     <label>Surname<input type="text" name="surname" value="<%= request.getParameter("surname")%>" required></label><br>
     <label>Age<input type="digit" name="age" value="<%= request.getParameter("age")%>" required pattern="[0-9]{1,3}"></label><br>

@@ -22,6 +22,8 @@ public class Developer implements BaseEntity<Long> {
     @Id
     @Column(name = "id")
     private Long id;
+    @Column(name = "username")
+    private String username;
     @Column(name = "name")
     private String name;
     @Column(name = "surname")
