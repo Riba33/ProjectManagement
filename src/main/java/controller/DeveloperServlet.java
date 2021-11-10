@@ -24,13 +24,13 @@ public class DeveloperServlet extends HttpServlet {
                 break;
             case "find-developer":
                 String name = req.getParameter("name");
-                List<Developer> developer = service.findByName(name);
-                if(developer.isEmpty()) {
+                List<Developer> developers = service.findByName(name);
+                if(developers.isEmpty()) {
                     req.setAttribute("message","Developer not found!");
                     getServletContext().getRequestDispatcher("/view/message.jsp").forward(req, resp);
                 }
                 else {
-                    req.setAttribute("developers", developer);
+                    req.setAttribute("developers", developers);
                     getServletContext().getRequestDispatcher("/view/developer/show-developers.jsp").forward(req, resp);
                 }
                 break;
