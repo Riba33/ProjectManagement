@@ -35,8 +35,8 @@
             <td>${cust.id}</td>
             <td>${cust.name}</td>
             <td>${cust.safer}</td>
-            <td><a href="/my-app/update-customer?id=${cust.id}">Update</a></td>
-            <td><a href="/my-app/delete-customer?id=${cust.id}">Delete</a></td>
+            <td><a href="/my-app/view/customer/update-customer.jsp?id=${cust.id}&name=${cust.name}&safer=${cust.safer}">Update</a></td>
+            <td><a href="/my-app/customer/delete-customer?id=${cust.id}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

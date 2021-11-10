@@ -18,7 +18,7 @@
     <h1>Create project.</h1>
 </div>
 <br>
-<form method="post" action="">
+<form method="post" action="/my-app/project">
     <label>Name<input type="text" name="name" required></label><br>
 
     <label>Date<input type="date" name="date" required pattern="yyyy-MM-dd" min="1975-01-01" max="2050-12-31"></label><br>

@@ -7,8 +7,7 @@
     .block1 {
         width: 235px;
         background: #ccc;
-        padding: 10px;
-        padding-right: 20px;
+        padding: 10px 20px 10px 10px;
         border: solid 5px black;
     }
 </style>
@@ -16,18 +15,18 @@
 <body>
 <c:import url="/view/main-menu.jsp"/>
 <div class="block1">
-    <h1>Update customer</h1>
+    <h1>Update developer.</h1>
 </div>
 <br>
-<form method="post" action="">
-    ID = <%= request.getParameter("id")%> <br>
-    <label>Name<input type="text" name="name" required></label><br>
-    <label>Surname<input type="text" name="surname" required></label><br>
-    <label>Age<input type="digit" name="age" required pattern="[0-9]{1,3}"></label><br>
-    <label>Gender<input type="radio" name="gender" value="M">Man
+<form method="get" action="/my-app/developer/update-developer">
+    <label>ID<input type="text" readonly name="id" value="<%= request.getParameter("id")%>"></label><br>
+    <label>Name<input type="text" name="name" value="<%= request.getParameter("name")%>" required></label><br>
+    <label>Surname<input type="text" name="surname" value="<%= request.getParameter("surname")%>" required></label><br>
+    <label>Age<input type="digit" name="age" value="<%= request.getParameter("age")%>" required pattern="[0-9]{1,3}"></label><br>
+    <label>Gender<input type="radio" name="gender" value="M" required>Man
         <input type="radio" name="gender" value="W">Woman
     </label><br>
-    <label>Salary<input type="digit" name="salary" required pattern="[0-9]{1,6}"></label><br>
+    <label>Salary<input type="digit" name="salary" value="<%= request.getParameter("salary")%>" required pattern="[0-9]{1,6}"></label><br>
     <input type="submit" value="Update" name="Update"><br>
 </form>
 </body>

@@ -7,9 +7,8 @@
     .block1 {
     width: 200px;
     background: #ccc;
-    padding: 10px;
-    padding-right: 20px;
-    border: solid 5px black;
+        padding: 10px 20px 10px 10px;
+        border: solid 5px black;
     }
     </style>
 </head>
@@ -19,10 +18,8 @@
     <h1>Find customer</h1>
 </div>
 <br>
-<form method="post" action="">
+<form method="get" action="/my-app/customer/find-customer">
     <label><input type="text" name="name" required></label>Name<br>
-
-
     <input type="submit" value="Find" name="Find"><br>
 </form>
 </body>

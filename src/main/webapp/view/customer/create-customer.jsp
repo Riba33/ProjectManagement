@@ -7,8 +7,7 @@
         .block1 {
             width: 230px;
             background: #ccc;
-            padding: 10px;
-            padding-right: 20px;
+            padding: 10px 20px 10px 10px;
             border: solid 5px black;
         }
     </style>
@@ -19,7 +18,7 @@
     <h1>Create customer</h1>
 </div>
 <br>
-<form method="post" action="">
+<form method="post" action="/my-app/customer">
     <label><input type="text" name="name" required></label>Name<br>
 
     <label><input type="text" name="safer" required></label>Safer<br>

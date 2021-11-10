@@ -2,11 +2,10 @@
 <%@ page import="model.Company" %>
 <%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html>
 <head>
-    <title>Show projects.</title>
+    <title>Show customers</title>
     <style>
         .block1 {
             width: 150px;
@@ -19,26 +18,25 @@
 <body>
 <c:import url="/view/main-menu.jsp"/>
 <div class="block1">
-    <h1>Projects.</h1>
+    <h1>Skills</h1>
 </div>
 <br/>
 <table border=5 cellpadding=5>
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Date</th>
+        <th>Level</th>
         <th>Update</th>
         <th>Delete</th>
     </tr>
-    <c:forEach var="project" items="${requestScope.projects}">
+    <c:set var="skill" value="${requestScope.skill}"/>
         <tr>
-            <td>${project.id}</td>
-            <td>${project.name}</td>
-            <td><fmt:formatDate value="${project.date}" pattern="dd-MM-yyyy"/> </td>
-            <td><a href="/my-app/view/project/update-project.jsp?id=${project.id}&name=${project.name}&date=${project.date}">Update</a></td>
-            <td><a href="/my-app/project/delete-project?id=${project.id}">Delete</a></td>
+            <td>${skill.id}</td>
+            <td>${skill.name}</td>
+            <td>${skill.level}</td>
+            <td><a href="/my-app/view/skill/update-skill.jsp?id=${skill.id}&name=${skill.name}&skill=${skill.level}">Update</a></td>
+            <td><a href="/my-app/skill/delete-skill?id=${skill.id}">Delete</a></td>
         </tr>
-    </c:forEach>
-</table>
+   </table>
 </body>
 </html>

@@ -44,7 +44,7 @@
             position: absolute;
             background-color: #f9f9f9;
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
             z-index: 1;
         }
 
@@ -69,15 +69,15 @@
 </head>
 <body>
 <div class="navbar">
-    <a href="home.jsp">Home</a>
+    <a href="/my-app/">Home</a>
     <div class="dropdown">
         <button class="dropbtn">Company
         <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="/my-app/show-companies">Show Companies</a>
-            <a href="/my-app/find-company">Find Company</a>
-            <a href="/my-app/create-company">Create Company</a>
+            <a href="/my-app/company/show-companies">Show Companies</a>
+            <a href="/my-app/view/company/find-company-by-name.jsp">Find Company</a>
+            <a href="/my-app/view/company/create-company.jsp">Create Company</a>
         </div>
     </div>
     <div class="dropdown">
@@ -85,9 +85,9 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="/my-app/show-customers">Show Customers</a>
-            <a href="/my-app/find-customer">Find Customer</a>
-            <a href="/my-app/create-customer">Create Customer</a>
+            <a href="/my-app/customer/show-customers">Show Customers</a>
+            <a href="/my-app/view/customer/find-customer-by-name.jsp">Find Customer</a>
+            <a href="/my-app/view/customer/create-customer.jsp">Create Customer</a>
         </div>
     </div>
     <div class="dropdown">
@@ -95,9 +95,9 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="/my-app/show-developers">Show Developers</a>
-            <a href="/my-app/find-developer">Find Developer</a>
-            <a href="/my-app/create-developer">Create Developer</a>
+            <a href="/my-app/developer/show-developer">Show Developers</a>
+            <a href="/my-app/view/developer/find-developer-by-name.jsp">Find Developer</a>
+            <a href="/my-app/view/developer/create-developer.jsp">Create Developer</a>
         </div>
     </div>
     <div class="dropdown">
@@ -105,9 +105,9 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="/my-app/show-projects">Show Project</a>
-            <a href="/my-app/find-project">Find Project</a>
-            <a href="/my-app/create-project">Create Project</a>
+            <a href="/my-app/project/show-project">Show Project</a>
+            <a href="/my-app/view/project/find-project-by-name.jsp">Find Project</a>
+            <a href="/my-app/view/project/create-project.jsp">Create Project</a>
         </div>
     </div>
     <div class="dropdown">
@@ -115,10 +115,10 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="/my-app/show-skills">Show Skills</a>
-            <a href="/my-app/find-skills-by-name">Find Skill By Name</a>
-            <a href="/my-app/find-skill-by-id">Find Skill By ID</a>
-            <a href="/my-app/create-skill">Create Skill</a>
+            <a href="/my-app/skill/show-skill">Show Skills</a>
+            <a href="/my-app/view/skill/find-skills-by-name.jsp">Find Skill By Name</a>
+            <a href="/my-app/view/skill/find-skill-by-id.jsp">Find Skill By ID</a>
+            <a href="/my-app/view/skill/create-skill.jsp">Create Skill</a>
         </div>
     </div>
 </div>

@@ -18,7 +18,7 @@
     <h1>Find project.</h1>
 </div>
 <br>
-<form method="post" action="">
+<form method="get" action="/my-app/project/find-project">
     <label><input type="text" name="name" required></label>Name<br>
 
     <input type="submit" value="Find" name="Find"><br>

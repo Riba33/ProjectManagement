@@ -35,8 +35,8 @@
             <td>${skill.id}</td>
             <td>${skill.name}</td>
             <td>${skill.level}</td>
-            <td><a href="/my-app/update-skill?id=${skill.id}&name=${skill.name}">Update</a></td>
-            <td><a href="/my-app/delete-skill?id=${skill.id}">Delete</a></td>
+            <td><a href="/my-app/view/skill/update-skill.jsp?id=${skill.id}&name=${skill.name}&skill=${skill.level}">Update</a></td>
+            <td><a href="/my-app/skill/delete-skill?id=${skill.id}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

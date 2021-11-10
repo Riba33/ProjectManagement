@@ -18,7 +18,7 @@
   <h1>Find skill</h1>
 </div>
 <br>
-<form method="post" action="">
+<form method="get" action="/my-app/skill/find-skill-by-id">
   <label><input type="text" name="id" required pattern="^[0-9]+$"></label>Id<br>
   <input type="submit" value="Find" name="Find"><br>
 </form>

@@ -18,11 +18,12 @@
     <h1>Update customer</h1>
 </div>
 <br>
-<form method="post" action="">
-    ID = <%= request.getParameter("id")%> <br>
-    <label><input type="text" name="name" required></label>Name<br>
+<form method="get" action="/my-app/customer/update-customer">
+    <label>ID<input type="text" readonly name="id" value="<%= request.getParameter("id")%>"></label><br>
 
-    <label><input type="text" name="safer" required></label>Safer<br>
+    <label><input type="text" name="name" value="<%= request.getParameter("name")%>" required></label>Name<br>
+
+    <label><input type="text" name="safer" value="<%= request.getParameter("safer")%>" required></label>Safer<br>
 
     <input type="submit" value="Update" name="Update"><br>
 </form>

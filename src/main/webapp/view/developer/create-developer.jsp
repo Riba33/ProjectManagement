@@ -7,8 +7,7 @@
         .block1 {
             width: 230px;
             background: #ccc;
-            padding: 10px;
-            padding-right: 20px;
+            padding: 10px 20px 10px 10px;
             border: solid 5px black;
         }
     </style>
@@ -19,7 +18,7 @@
     <h1>Create developer</h1>
 </div>
 <br>
-<form method="post" action="">
+<form method="post" action="/my-app/developer">
     <label>Name<input type="text" name="name" required></label><br>
     <label>Surname<input type="text" name="surname" required></label><br>
     <label>Age<input type="digit" name="age" required pattern="[0-9]{1,3}"></label><br>

@@ -9,6 +9,6 @@ import java.io.IOException;
 public class MainMenuServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/view/home.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/view/index.jsp").forward(req,resp);
     }
 }

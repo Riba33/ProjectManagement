@@ -18,7 +18,7 @@
     <h1>Find skill</h1>
 </div>
 <br>
-<form method="post" action="">
+<form method="get" action="/my-app/skill/find-skill-by-name">
     <label><input type="text" name="name" required></label>Name<br>
     <input type="submit" value="Find" name="Find"><br>
 </form>

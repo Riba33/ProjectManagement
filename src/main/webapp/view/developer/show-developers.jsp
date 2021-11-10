@@ -1,6 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page import="model.Company" %>
-<%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html>
@@ -41,8 +39,9 @@
             <td>${dev.age}</td>
             <td>${dev.gender}</td>
             <td>${dev.salary}</td>
-            <td><a href="/my-app/update-developer?id=${dev.id}">Update</a></td>
-            <td><a href="/my-app/delete-developer?id=${dev.id}">Delete</a></td>
+            <td><a href="/my-app/view/developer/update-developer.jsp?id=${dev.id}&name=${dev.name}&surname=${dev.surname}
+                        &age=${dev.age}&gender=${dev.gender}&salary=${dev.salary}">Update</a></td>
+            <td><a href="/my-app/developer/delete-developer?id=${dev.id}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

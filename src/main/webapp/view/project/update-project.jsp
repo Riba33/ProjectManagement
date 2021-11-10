@@ -18,11 +18,12 @@
   <h1>Update project.</h1>
 </div>
 <br>
-<form method="post" action="">
-  ID = <%= request.getParameter("id")%> <br>
+<form method="get" action="/my-app/project/update-project">
+  <label>ID<input type="text" readonly name="id" value="<%= request.getParameter("id")%>"></label><br>
+
   <label>Name<input type="text"  name="name" value="<%= request.getParameter("name")%>" required></label><br>
 
-  <label>Date<input type="date" name="date" required pattern="yyyy-MM-dd"></label><br>
+  <label>Date<input type="date" name="date" value="<%= request.getParameter("date")%>" required pattern="yyyy-MM-dd"></label><br>
 
   <input type="submit" value="Update" name="Update"><br>
 </form>

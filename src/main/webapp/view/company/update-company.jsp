@@ -7,8 +7,7 @@
     .block1 {
         width: 235px;
         background: #ccc;
-        padding: 10px;
-        padding-right: 20px;
+        padding: 10px 20px 10px 10px;
         border: solid 5px black;
     }
 </style>
@@ -19,11 +18,13 @@
     <h1>Update company</h1>
 </div>
 <br>
-<form method="post" action="">
-    ID = <%= request.getParameter("id")%> <br>
-    <label><input type="text" name="name" required></label>Name<br>
+<form method="get" action="/my-app/company/update-company">
 
-    <label><input type="text" name="safer" required></label>Safer<br>
+    <label>ID<input type="text" readonly name="id" value="<%= request.getParameter("id")%>"></label><br>
+
+    <label>Name<input type="text" name="name" value="<%= request.getParameter("name")%>" required></label><br>
+
+    <label>Safer<input type="text" name="safer" value="<%= request.getParameter("safer")%>" required></label>Safer<br>
 
     <input type="submit" value="Update" name="Update"><br>
 </form>
